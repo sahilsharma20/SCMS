@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h2 class="mb-4">Welcome to the Smart Canteen, {{ session['user'] }}!</h2>
+    <p>What would you like to do today?</p>
+    
+    <div class="d-flex justify-content-center mt-4">
+        <a href="{{ url_for('menu') }}" class="btn btn-success btn-lg mx-3">
+            <i class="bi bi-cart-plus"></i> Order Food
+        </a>
+        <a href="{{ url_for('feedback') }}" class="btn btn-primary btn-lg mx-3">
+            <i class="bi bi-pencil-square"></i> Give Feedback
+        </a>
+    </div>
+    
+    <div class="mt-5">
+        <p>Stay updated with your orders and let us know your experience!</p>
+    </div>
+</div>
+{% endblock %}

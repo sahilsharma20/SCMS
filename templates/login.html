@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Smart Canteen Login</h2>
+    
+    <form action="{{ url_for('login') }}" method="POST">
+        <div class="mb-3">
+            <label for="college_id" class="form-label">College ID</label>
+            <input type="text" name="college_id" id="college_id" class="form-control" required placeholder="e.g., 22CS070">
+        </div>
+        
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" class="form-control" required placeholder="Admin@12345">
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+        </div>
+    </form>
+
+    {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
